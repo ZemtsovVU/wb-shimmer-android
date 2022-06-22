@@ -63,6 +63,12 @@ public final class ShimmerDrawable extends Drawable {
     return mShimmer;
   }
 
+  /** Sets whether the shimmering animation will start automatically. */
+  public void setShimmerAutoStart(boolean status) {
+    if (mShimmer == null) return;
+    mShimmer.autoStart = status;
+  }
+
   /** Starts the shimmer animation. */
   public void startShimmer() {
     if (mValueAnimator != null && !isShimmerStarted() && getCallback() != null) {

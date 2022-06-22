@@ -27,6 +27,8 @@ import androidx.annotation.Nullable;
  * developed for Facebook Home.
  *
  * <p>Find more examples and usage instructions over at: facebook.github.io/shimmer-android
+ *
+ * <p>Deprecated in Wildberries project. Use `WbShimmerFrameLayout` instead.
  */
 public class ShimmerFrameLayout extends FrameLayout {
   private final Paint mContentPaint = new Paint();
@@ -92,6 +94,11 @@ public class ShimmerFrameLayout extends FrameLayout {
 
   public @Nullable Shimmer getShimmer() {
     return mShimmerDrawable.getShimmer();
+  }
+
+  /** Sets whether the shimmering animation will start automatically. */
+  public void setShimmerAutoStart(boolean status) {
+    mShimmerDrawable.setShimmerAutoStart(status);
   }
 
   /** Starts the shimmer animation. */
